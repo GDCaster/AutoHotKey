@@ -2,7 +2,7 @@
 
 **TH / EN inside one file** · Windows-ready EXE · No Python required
 
-[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)](https://github.com/your-username/your-repo/releases/latest)
+[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)]((https://github.com/GDCaster/AutoHotKey/blob/main/AutoKey.exe))
 *(แก้ `your-username/your-repo` ให้เป็นของคุณเอง หรือใส่ลิงก์ตรงไปยังไฟล์ .exe ของ Release)*
 
 ---
@@ -22,7 +22,7 @@
 > **แนะนำ:** ใช้ไฟล์ .exe สำเร็จรูป ไม่ต้องติดตั้ง Python หรือไลบรารีใด ๆ
 
 1. ไปที่หน้า **Releases**:
-   [https://github.com/your-username/your-repo/releases/latest](https://github.com/your-username/your-repo/releases/latest)
+   [https://github.com/your-username/your-repo/releases/latest](https://github.com/GDCaster/AutoHotKey/)
 2. ดาวน์โหลดไฟล์ `KeyRemapperApp.exe` (หรือชื่อที่คุณตั้งไว้)
 3. ดับเบิลคลิกเพื่อใช้งานได้ทันที
 
@@ -101,7 +101,7 @@
 # 🎮 Key Remapper App (English)
 
 **Windows-ready EXE** · No Python required
-[⬇️ Download for Windows (.exe)](https://github.com/your-username/your-repo/releases/latest)
+[⬇️ Download for Windows (.exe)](https://github.com/GDCaster/AutoHotKey/blob/main/AutoKey.exe)
 
 An app for **keyboard/mouse remapping** with helper modes:
 
@@ -116,7 +116,7 @@ Built with **Python + Tkinter + pynput**
 ## 🚀 Installation (Windows EXE)
 
 1. Visit **Releases**:
-   [https://github.com/your-username/your-repo/releases/latest](https://github.com/your-username/your-repo/releases/latest)
+   [https://github.com/your-username/your-repo/releases/latest](https://github.com/GDCaster/AutoHotKey/)
 2. Download `KeyRemapperApp.exe`
 3. Double-click to run
 
@@ -194,3 +194,4 @@ pyinstaller -F -w -i app_icon.ico main.py
 
 Specify your license here (e.g., MIT).
 You may also add usage terms if needed.
+
