@@ -2,7 +2,7 @@
 
 **TH / EN inside one file** · Windows-ready EXE · No Python required
 
-[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)]([AutoKey.exe](https://github.com/GDCaster/AutoHotKey/blob/0b99b2245c16bf8f0f7ab38fe2b43306e8d9ab43/AutoKey.exe))
+[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)](https://github.com/GDCaster/AutoHotKey/raw/refs/heads/main/AutoKey.exe)
 
 
 ---
@@ -101,7 +101,7 @@
 # 🎮 Key Remapper App (English)
 
 **Windows-ready EXE** · No Python required
-[⬇️ Download for Windows (.exe)](https://github.com/GDCaster/AutoHotKey/blob/main/AutoKey.exe)
+[⬇️ Download for Windows (.exe)](https://github.com/GDCaster/AutoHotKey/raw/refs/heads/main/AutoKey.exe)
 
 An app for **keyboard/mouse remapping** with helper modes:
 
@@ -194,6 +194,7 @@ pyinstaller -F -w -i app_icon.ico main.py
 
 Specify your license here (e.g., MIT).
 You may also add usage terms if needed.
+
 
 
 
