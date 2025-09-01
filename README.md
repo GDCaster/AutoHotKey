@@ -1,101 +1,89 @@
 # 🎮 Key Remapper App
 
-แอปพลิเคชันสำหรับ **รีแมพปุ่มคีย์บอร์ด** และเพิ่มฟังก์ชันพิเศษ เช่น
+**TH / EN inside one file** · Windows-ready EXE · No Python required
 
-* กดค้าง (Hold & Toggle)
-* กดหลายครั้ง (Multi-Press)
-* กดวนอัตโนมัติ (Auto-Repeat)
-
-พัฒนาโดยใช้ **Python + PyQt5 + pynput**
+[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)](https://github.com/your-username/your-repo/releases/latest)
+*(แก้ `your-username/your-repo` ให้เป็นของคุณเอง หรือใส่ลิงก์ตรงไปยังไฟล์ .exe ของ Release)*
 
 ---
 
-## 🚀 วิธีติดตั้ง (Installation)
+แอปสำหรับ **รีแมพปุ่มคีย์บอร์ดและเมาส์** พร้อมโหมดช่วยกด:
 
-1. ติดตั้ง **Python 3.9+**
-   ดาวน์โหลดได้ที่ [python.org](https://www.python.org/downloads/)
+* กดค้างสลับ (Hold Toggle)
+* กดหลายครั้ง (Multi-Press)
+* กดซ้ำอัตโนมัติ (Auto-Repeat)
 
-2. ติดตั้ง dependencies ที่จำเป็น
+พัฒนาโดยใช้ **Python + Tkinter + pynput**
 
-   ```bash
-   pip install pyqt5 pynput
-   ```
+---
 
-3. รันโปรแกรม
+## 🚀 วิธีติดตั้ง (Windows EXE)
 
-   ```bash
-   python main.py
-   ```
+> **แนะนำ:** ใช้ไฟล์ .exe สำเร็จรูป ไม่ต้องติดตั้ง Python หรือไลบรารีใด ๆ
+
+1. ไปที่หน้า **Releases**:
+   [https://github.com/your-username/your-repo/releases/latest](https://github.com/your-username/your-repo/releases/latest)
+2. ดาวน์โหลดไฟล์ `KeyRemapperApp.exe` (หรือชื่อที่คุณตั้งไว้)
+3. ดับเบิลคลิกเพื่อใช้งานได้ทันที
+
+### ⚠️ หมายเหตุ SmartScreen (ครั้งแรกที่เปิด)
+
+* หากมีแจ้งเตือน **Windows protected your PC** ให้กด **More info** → **Run anyway**
+* แอปไม่ต้องการสิทธิ์แอดมิน (ยกเว้นบางกรณีที่ระบบตั้งค่าความปลอดภัยไว้สูงมาก)
 
 ---
 
 ## 🖥️ วิธีใช้งาน (Usage)
 
-1. เปิดแอป จะเห็นหน้าต่างหลัก พร้อม **ตารางการแมปปุ่ม**
-2. คลิก **เพิ่มการแมปปุ่ม (➕ Add Mapping)** เพื่อสร้างกฎใหม่
-3. เลือกประเภทการทำงาน:
+* แถบด้านบนมีตัวบอกสถานะ:
+  **● กำลังใช้งาน** = แอปกำลังส่งคีย์/คลิก,  **○ พร้อมใช้งาน** = Idle
+* ปุ่ม **อยู่บนสุดเสมอ** ช่วยให้หน้าต่างไม่ถูกบัง (ปิด/เปิดได้)
+* ปุ่ม **ปิดใช้งาน/เปิดใช้งาน** ใช้หยุดทุกกิจกรรมทันที (หยุด Hold/Repeat ทั้งหมด)
 
-   * **Remap** → กดปุ่มต้นทาง = ส่งปุ่มเป้าหมาย 1 ครั้ง
-   * **Hold** →
+### สร้าง/แก้ไขกฎ (Key Config)
 
-     * *Normal Hold* → กดปุ่มต้นทางค้าง = ส่งปุ่มเป้าหมายค้าง
-     * *Toggle Hold* → กด 1 ครั้ง = ค้าง, กดอีกครั้ง = ปล่อย
-   * **Multi-Press** → กดครั้งเดียว แต่ส่งปุ่มเป้าหมายหลายครั้ง
-   * **Auto-Repeat** → กดค้าง จะส่งปุ่มเป้าหมายซ้ำ ๆ ตามรอบเวลา
-4. กำหนดค่า เช่น `Target Key`, จำนวนครั้ง, ความหน่วงเวลา
-5. กด **Enable (✅)** เพื่อเปิดใช้งาน
+1. กด **เพิ่มการตั้งค่า** → ตั้งชื่อ, ปุ่มต้นทาง (`source_key`), เลือกประเภทการทำงาน, ปุ่มเป้าหมาย (`target_key`)
+2. สำหรับ **Multi-Press** ตั้ง `จำนวนครั้ง` และ `ช่วงเวลาระหว่างการกด (วินาที)`
+3. สำหรับ **Auto-Repeat** ตั้ง `ช่วงเวลาการกดซ้ำ (วินาที)`
+4. กด **บันทึกการตั้งค่า** เพื่อเซฟลงไฟล์ `key_configs.json`
 
----
+### ประเภทการทำงาน
 
-## ⚙️ ตัวอย่างการใช้งาน (Examples)
+* **Remap:** กดปุ่ม X = ส่งปุ่ม Y 1 ครั้ง (เช่น `a → b`)
+* **Hold Toggle:** กดครั้งแรกเริ่มค้าง, กดอีกครั้งยกเลิก (รองรับการใช้ปุ่มเดียวกัน เช่น `shift → shift`)
+* **Multi-Press:** กดปุ่มครั้งเดียว แต่ส่งปุ่มเป้าหมายหลายครั้งต่อเนื่อง
+* **Auto-Repeat:** กดเพื่อสลับเปิด/ปิดการยิงปุ่มเป้าหมายซ้ำ ๆ ตามรอบเวลา
 
-* **Remap:**
-  `CapsLock → Esc` (กด CapsLock = ส่ง Esc)
+### ปุ่มที่รองรับ (ตัวอย่าง)
 
-* **Hold (Toggle):**
-  `Shift → Shift (Toggle)` (กดครั้งเดียวค้าง Shift ไว้ จนกดอีกครั้งถึงปล่อย)
+ตัวอักษร/ตัวเลขทั่วไป (`a-z`, `0-9`), `space`, `enter`, `shift`, `ctrl`, `alt`, `tab`, `esc`, `f1-f12`,
+ปุ่มลูกศร `up/down/left/right`, เมาส์: `left_click`, `right_click`, `middle_click`, สกรอลล์: `scroll_up`, `scroll_down`
 
-* **Multi-Press:**
-  `Q → Q (x3)` (กด Q หนึ่งครั้ง แต่ส่ง Q สามครั้งติดกัน)
+### เคล็ดลับสำคัญ
 
-* **Auto-Repeat:**
-  `F → F (ทุก 0.1 วิ)` (กดค้าง F จะยิง F รัวอัตโนมัติ)
-
----
-
-## 🔧 ฟีเจอร์ (Features)
-
-✅ เปิด/ปิดการทำงานได้ตลอดเวลา
-✅ เพิ่ม/ลบกฎการแมปปุ่มได้ไม่จำกัด
-✅ รองรับปุ่มคีย์บอร์ดทั่วไปและปุ่มพิเศษ
-✅ ใช้งานง่ายผ่าน GUI
+* การใช้ปุ่มเดียวกันกับ **Hold Toggle** และ **Auto-Repeat** ทำได้ (เช่น `e → e`)
+* หลีกเลี่ยงการใช้ปุ่มเดียวกันกับ **Remap** (อาจทำให้วนซ้ำ)
 
 ---
 
-# 🎮 Key Remapper App (English)
+## 🗂️ ไฟล์คอนฟิก
 
-An application for **keyboard key remapping** with extra features such as:
-
-* Hold & Toggle keys
-* Multi-Press keys
-* Auto-Repeat keys
-
-Built with **Python + PyQt5 + pynput**
+* แอปบันทึก/โหลดกฎจาก `key_configs.json` ในโฟลเดอร์เดียวกับ .exe
+* มีตัวอย่างไฟล์ `sample_configs.json` สำหรับอ้างอิง
 
 ---
 
-## 🚀 Installation
+## 🧰 ติดตั้งจากซอร์ส (ไม่จำเป็นสำหรับผู้ใช้ทั่วไป)
 
-1. Install **Python 3.9+**
-   Download from [python.org](https://www.python.org/downloads/)
+> เฉพาะกรณีต้องการรันจากซอร์สโค้ด
 
-2. Install required dependencies
+1. ติดตั้ง **Python 3.9+**
+2. ติดตั้งไลบรารี:
 
    ```bash
-   pip install pyqt5 pynput
+   pip install pynput
    ```
-
-3. Run the program
+3. รันโปรแกรม:
 
    ```bash
    python main.py
@@ -103,43 +91,106 @@ Built with **Python + PyQt5 + pynput**
 
 ---
 
+## 🔒 ความเป็นส่วนตัว
+
+แอปทำงานภายในเครื่อง ไม่ส่งข้อมูลออกอินเทอร์เน็ต
+การรีแมพปุ่ม/คลิกใช้ผ่านไลบรารี `pynput` เท่านั้น
+
+---
+
+# 🎮 Key Remapper App (English)
+
+**Windows-ready EXE** · No Python required
+[⬇️ Download for Windows (.exe)](https://github.com/your-username/your-repo/releases/latest)
+
+An app for **keyboard/mouse remapping** with helper modes:
+
+* **Hold Toggle** (press once to hold, press again to release)
+* **Multi-Press** (press once → send multiple times)
+* **Auto-Repeat** (toggle repeating at a fixed interval)
+
+Built with **Python + Tkinter + pynput**
+
+---
+
+## 🚀 Installation (Windows EXE)
+
+1. Visit **Releases**:
+   [https://github.com/your-username/your-repo/releases/latest](https://github.com/your-username/your-repo/releases/latest)
+2. Download `KeyRemapperApp.exe`
+3. Double-click to run
+
+### SmartScreen note (first launch)
+
+If Windows shows **"Windows protected your PC"**, click **More info** → **Run anyway**.
+The app does **not** require admin rights under normal settings.
+
+---
+
 ## 🖥️ Usage
 
-1. Launch the app → you will see the main window with the **key mapping table**.
-2. Click **Add Mapping (➕)** to create a new rule.
-3. Select the type of action:
+* Top bar shows activity: **● Active** when sending keys/clicks, **○ Ready** when idle
+* **Always on top** toggle keeps the window above others
+* **Enable/Disable** instantly stops all holds/repeats
 
-   * **Remap** → Press source key = Send target key once
-   * **Hold** →
+### Create/Edit rules (Key Config)
 
-     * *Normal Hold* → Hold source key = Hold target key
-     * *Toggle Hold* → Press once = Hold, press again = Release
-   * **Multi-Press** → Press once = Send target key multiple times
-   * **Auto-Repeat** → Hold key = Repeat target key continuously
-4. Configure values like `Target Key`, number of presses, and delay.
-5. Click **Enable (✅)** to activate.
+1. Click **Add** → set name, `source_key`, action type, `target_key`
+2. For **Multi-Press**, set `press_count` and `press_delay` (seconds)
+3. For **Auto-Repeat**, set `repeat_interval` (seconds)
+4. Click **Save** to persist in `key_configs.json`
 
----
+### Action types
 
-## ⚙️ Examples
+* **Remap:** press X → send Y once (e.g., `a → b`)
+* **Hold Toggle:** press to start holding, press again to release (supports same-key like `shift → shift`)
+* **Multi-Press:** press once → send target key multiple times
+* **Auto-Repeat:** toggle repeating at a fixed interval
 
-* **Remap:**
-  `CapsLock → Esc` (press CapsLock = sends Esc)
+### Supported keys (examples)
 
-* **Hold (Toggle):**
-  `Shift → Shift (Toggle)` (press once to hold Shift, press again to release)
-
-* **Multi-Press:**
-  `Q → Q (x3)` (press Q once, sends Q three times)
-
-* **Auto-Repeat:**
-  `F → F (every 0.1s)` (holding F will fire repeatedly)
+Letters/numbers (`a-z`, `0-9`), `space`, `enter`, `shift`, `ctrl`, `alt`, `tab`, `esc`, `f1-f12`,
+arrows `up/down/left/right`, mouse: `left_click`, `right_click`, `middle_click`, scroll: `scroll_up`, `scroll_down`
 
 ---
 
-## 🔧 Features
+## 🗂️ Config file
 
-✅ Enable/disable functionality anytime
-✅ Add/remove unlimited key mappings
-✅ Support for standard and special keys
-✅ Easy-to-use GUI
+* Rules are saved/loaded from `key_configs.json` next to the .exe
+* See `sample_configs.json` for examples
+
+---
+
+## 🧰 Run from source (optional)
+
+1. Install **Python 3.9+**
+2. Install deps:
+
+   ```bash
+   pip install pynput
+   ```
+3. Run:
+
+   ```bash
+   python main.py
+   ```
+
+---
+
+## 📦 Building the EXE (for maintainers)
+
+If you need to rebuild the EXE yourself:
+
+```bash
+pip install pyinstaller
+pyinstaller -F -w -i app_icon.ico main.py
+```
+
+* `-F` single-file, `-w` no console window, `-i` icon file (optional)
+
+---
+
+## 📝 License
+
+Specify your license here (e.g., MIT).
+You may also add usage terms if needed.
