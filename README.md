@@ -2,8 +2,8 @@
 
 **TH / EN inside one file** · Windows-ready EXE · No Python required
 
-[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)]((https://github.com/GDCaster/AutoHotKey/blob/main/AutoKey.exe))
-*(แก้ `your-username/your-repo` ให้เป็นของคุณเอง หรือใส่ลิงก์ตรงไปยังไฟล์ .exe ของ Release)*
+[⬇️ ดาวน์โหลดสำหรับ Windows (.exe)]([(https://github.com/GDCaster/AutoHotKey/blob/main/AutoKey.exe)])
+
 
 ---
 
@@ -194,4 +194,5 @@ pyinstaller -F -w -i app_icon.ico main.py
 
 Specify your license here (e.g., MIT).
 You may also add usage terms if needed.
+
 
